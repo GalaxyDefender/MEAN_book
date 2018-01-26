@@ -3,11 +3,6 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Book = require('../models/Book.js');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.send('Express RESTful API');
-  });
-
 // GET all books
 router.get('/', function(req, res, next) {
     Book.find(function(err, products) {
