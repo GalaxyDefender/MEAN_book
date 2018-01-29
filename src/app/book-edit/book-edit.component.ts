@@ -24,14 +24,16 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  updateBook(id, data) {
-    this.http.put('/book/'+id, data)
-    .subscribe(res => {
-      let id = res['_id'];
-      this.router.navigate(['/book-details', id]);
-    }, (err) => {
-      console.log(err);
-    });
+  updateBook(id) {
+    // this.book.updated_date = Date.now();
+    this.http.put('/book/'+id, this.book)
+      .subscribe(res => {
+          let id = res['_id'];
+          this.router.navigate(['/book-details', id]);
+        }, (err) => {
+          console.log(err);
+        }
+      );
   }
 
 }

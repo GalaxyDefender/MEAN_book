@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var book = require('./routes/book');
 var app = express();
 var mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://GalaxyDefender:Qu3ntin1988@ds115758.mlab.com:15758/mean-books');
 
 app.use(logger('dev'));
